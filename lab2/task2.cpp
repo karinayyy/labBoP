@@ -5,8 +5,8 @@ using namespace std;
 
 int main()
 {
-    int n, k, x, i;
-    double y;
+    int n, k, i;
+    double x, y;
     cout << "Enter n, k, x" << endl;
     cin >> n >> k >> x;
     if (n >= 0){
@@ -17,8 +17,7 @@ int main()
                 if(i != k){
                     if ((x+2*i) != 0){
                         y += ((i) /( x+(2*i)));
-                        i++;
-                        cout << "YY" << y << endl;
+                        i++; 
                     }else{
                         cout << "x+2i == 0 Error"<< endl;
                     } 
