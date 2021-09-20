@@ -16,7 +16,7 @@ int main()
             while (i <= n){
                 if(i != k){
                     if ((x+2*i) != 0){
-                        y += ((i) /( x+(2*i)));
+                        y += i/( x+2*i);
                         i++; 
                     }else{
                         cout << "x+2i == 0 Error"<< endl;
