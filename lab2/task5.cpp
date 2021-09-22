@@ -9,9 +9,7 @@ int main()
     int a, b, h, n, x, i, y, j, s;
     cout << "Введите входные данные (интервал a-b, шаг h, n) " << endl;
     cin >> a >> b >> h >> n;
-    if (a <= b){
-	if (h > 0){
-		if (n > 1) {
+    if ((a <= b)&&(h > 0)&&(n > 1)){
 		    x = a;
 		    do {
 		        if (x < 0) {
@@ -41,14 +39,7 @@ int main()
 		        x += h;
 		    } while (x <= b);
 		    cout << "end" << endl;
-		}
-		else if (n < 1) {
-		    cout << "incorrect n" << endl;
-		}
 	} else {
-		cout << "Wrong h" << endl;
+		cout << "Введите: (a <= b)&&(h > 0)&&(n > 1) " << endl;
 	}
-    }else {
-        cout << "Wrong a b" << endl;
-    }
 }
