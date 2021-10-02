@@ -9,7 +9,7 @@ int main()
     cin >> x >> n;
     if (n >= 0){
         y = 1;
-        i = 0;
+        i = 1;
         while(i <= n){
             y *= (x - 2*i);
             i++;
