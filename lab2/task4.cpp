@@ -15,5 +15,5 @@ int main()
         add = 1/(pow(2,i));
         i++;
         cout << "i = " << i << endl << "y = " << y << endl << "add = " << add << endl;
-    }while(add > eps);
+    }while(add >= eps);
 }
