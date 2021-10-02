@@ -1,11 +1,11 @@
 #include <iostream>
-#include <string>
+
 
 using namespace std;
 
 int main()
 {
-    float inch, mm;
+    double inch, mm;
     cout << "Введите значение в дюймах, чтобы получить миллиметры " << endl;
     cin >> inch;
     mm = inch * 25.4;
