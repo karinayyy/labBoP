@@ -1,20 +1,21 @@
 #include <iostream>
-#include <string>
+#include <cmath>
 
 using namespace std;
 
 int main()
 {
+    double y, add, eps;
     int i;
-    double y, eps;
     cout << "Enter eps" << endl;
     cin >> eps;
     y = 0;
+    add = 1;
     i = 1;
-    while(y >= eps){
-        y += 1/(2*i);
+    while(add > eps){
+        y += 1/(pow(2,i));
+        add = 1/(pow(2,i));
         i++;
-        cout << "i = " << i << " y = " << y << endl;
+        cout << "i = " << i << endl << "y = " << y << endl << "add = " << add << endl;
     }
-    cout << "Y = " << y << endl;
 }
