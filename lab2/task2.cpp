@@ -14,11 +14,16 @@ int main()
             i = 1;    
             while (i <= n){
                 if(i != k){
-                    if ((x+2*i) != 0){
+                    try{
+                        if ((x+2*i) == 0)
+                            throw 123;
                         y += i/( x+2*i);
-                        i++; 
-                    }else
-                        cout << "x+2i == 0 Error"<< endl;
+                        i++;
+                    }
+                    catch(int i){
+                        cout << "Error #" << i << " - divide by 0" << endl;
+                        break;
+                    }
                 }else
                     i++;
                 cout << "y = " <<  y << ", i = " << i << endl;
