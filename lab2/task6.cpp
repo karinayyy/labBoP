@@ -8,6 +8,6 @@ int main()
     cout << "Enter the symbol" << endl;
     cin >> symbol;
     int num = symbol;
-    cout << dec << num << ' ' << hex << num << endl;
+    cout << "Hex code of entered char = " << hex << num << endl;
     return 0;
 }
