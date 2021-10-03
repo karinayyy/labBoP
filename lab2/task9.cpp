@@ -4,7 +4,7 @@ using namespace std;
 
 int main () 
 {
-    cout << "Ender x" << endl;
+    cout << "Enter x" << endl;
     double x;
     cin >> x;
     if(x < 0)
