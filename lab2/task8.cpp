@@ -11,15 +11,13 @@ int main ()
     cout << "Enter r for round, c for ceil, f for floor or t for trunc" << endl;
     char wayOfRoundingChar;
     cin >> wayOfRoundingChar;
-    wayOfRoundingChar = toupper(wayOfRoundingChar);
-    int wayOfRoundingSymnol = wayOfRoundingChar;
-    if (wayOfRoundingSymnol == 82)
+    if (wayOfRoundingChar == 'r')
         cout << "Yout num = " << round(num) << endl;
-    else if (wayOfRoundingSymnol == 67)
+    else if (wayOfRoundingChar == 'c')
         cout << "Yout num = " << ceil(num) << endl;
-    else if (wayOfRoundingSymnol == 70)
+    else if (wayOfRoundingChar == 'f')
         cout << "Yout num = " << floor(num) << endl;
-    else if (wayOfRoundingSymnol == 84)
+    else if (wayOfRoundingChar == 't')
         cout << "Yout num = " << trunc(num) << endl;
     else 
         cout << "Enter correct data" << endl;
