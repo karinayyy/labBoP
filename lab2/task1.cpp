@@ -10,7 +10,10 @@ int main()
     cin >> a >> b >> c;
     if(a == 0){
         if(b == 0)
-            c == 0 ? cout << "Бессконечное кол-во корней" << endl : cout << "Нет коренй" << endl;
+            if(c == 0)
+                cout << "Бессконечное кол-во корней" << endl;
+            else
+                cout << "Нет коренй" << endl;
         else{
             double x1 = -c / b;
             cout << "x1 = " << x1;
