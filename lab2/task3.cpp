@@ -10,10 +10,10 @@ int main()
     if (n >= 0){
         y = 1;
         i = 1;
-        while(i <= n){
-            y *= (x - 2*i);
-            i++;
+        while(i <= 2*n){
+            (i % 2 == 0) ? y *= (x - i) : y *= (x + i);
             cout << "y = " << y << " i = " << i << endl;
+            i++;
         }
         cout << "Y = " << y << endl;
     }else
