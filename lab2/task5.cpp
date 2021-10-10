@@ -5,8 +5,8 @@ using namespace std;
 
 int main()
 {
-    int a, b, n;
-	double h;
+    int n;
+	double h, a, b;
     cout << "Введите входные данные (интервал a-b(a <= b), шаг h > 0, n > 1)" << endl;
     cin >> a >> b >> h >> n;
     if (a <= b && h > 0 && n > 1){
