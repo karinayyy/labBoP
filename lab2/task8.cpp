@@ -21,9 +21,5 @@ int main ()
         cout << "Yout num = " << trunc(num) << endl;
     else 
         cout << "Enter correct data" << endl;
-    // cout << "Check" << round(12.5) << endl;
-    // cout << "Check" << ceil(12.5) << endl;
-    // cout << "Check" << floor(12.5) << endl;
-    // cout << "Check" << trunc(12.5) << endl;
     return 0;
 }
