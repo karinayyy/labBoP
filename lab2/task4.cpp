@@ -10,10 +10,11 @@ int main()
     cin >> eps;
     y = 0;
     i = 1;
-    do{
-        y += 1/(pow(2,i));
+    add = 1;
+    while(add > eps){
         add = 1/(pow(2,i));
-        i++;
+        y += add;
         cout << "i = " << i << endl << "y = " << y << endl << "add = " << add << endl;
-    }while(add >= eps);
+        i++;
+    }
 }
