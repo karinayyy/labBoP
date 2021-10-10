@@ -4,10 +4,10 @@ using namespace std;
 
 int main () 
 {
-    char symbol;
-    cout << "Enter the symbol" << endl;
-    cin >> symbol;
-    int codeOfTheSumbol = symbol;
-    cout << "Code of the entered symbol = " << codeOfTheSumbol << endl;
+    int num;
+    cout << "Enter the num" << endl;
+    cin >> num;
+    char sumbol = num;
+    cout << "symbol = " << sumbol << endl;
     return 0;
 }
