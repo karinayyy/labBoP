@@ -2,17 +2,25 @@
 
 using namespace std;
 
-void localVar()
+double localVar()
 {
     static double a, b;
-    do{
-        cin >> a >> b;
-        a > b ? cout << a << endl : cout << b << endl;
-    }while (a != b);
+    char eqs = 'e';
+    cout << "Enter a, b" << endl;
+    cin >> a >> b;
+    return (a != b ? (a < b ? (a) : (b) ) : (eqs));
 }
 
 int main()
 {
-    localVar();
-    return 0;
+    int num;
+    cout << "Enter '0' to quit or '1' to continue" << endl;
+    cin >> num;
+    if (num == 1){
+        cout << localVar() << endl;
+        main();
+    }else if (num == 0)
+        return 0;
+    else
+        main();
 }
