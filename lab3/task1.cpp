@@ -2,16 +2,15 @@
 
 using namespace std;
 
-int minMax(int i)
+void minMax(int i)
 {
-    static int min = 0;
-    static int max = 0;
-    if (i < max){
+    static int min = i;
+    static int max = i;
+    if (i < min)
         min = i;
-    }if(i > max){
+    if(i > max)
         max = i;
-    }
-    return min, max;
+    cout << min<< endl << max << endl;
 }
 
 int main()
@@ -20,7 +19,7 @@ int main()
     do{
         cout << "Enter i" << endl;
         cin >> i;
-        cout << minMax(i) << endl;
+        minMax(i);
     }while (i);
     return 0;
 }
