@@ -6,6 +6,7 @@ using namespace std;
 int main()
 {
     double inch, mm;
+    cout << "Hello world!" << endl;
     cout << "Введите значение в дюймах, чтобы получить миллиметры " << endl;
     cin >> inch;
     mm = inch * 25.4;
