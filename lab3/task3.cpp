@@ -2,8 +2,8 @@
 
 using namespace std;
 
-double firstSum(double x = 1){
-    return x;
+double firstSum(){
+    return 1;
 }
 
 double sum(double x){
@@ -11,7 +11,7 @@ double sum(double x){
 }
 
 double sum(double x, double y, double z){
-    return x + y + z;
+    return x * y * z;
 }
 
 int main(){
