@@ -7,8 +7,7 @@ double taskTwo( double a,
                 double b,
                 double c,
                 double& x1,
-                double& x2,
-                double d ){
+                double& x2){
     if(a == 0){
         if(b == 0){
             if(c == 0)
@@ -20,7 +19,7 @@ double taskTwo( double a,
             return 1;
         }
     }else{
-        d = pow(b, 2) - (4 * a * c);
+        double d = pow(b, 2) - (4 * a * c);
         if(d < 0)
             return 0;
         if(d > 0){
@@ -36,10 +35,10 @@ double taskTwo( double a,
 }
 
 int main(){
-    double a, b, c, x1, x2, d;
+    double a, b, c, x1, x2;
     cout << "Enter a, b, c" << endl;
     cin >> a >> b >> c;
-    int res = taskTwo(a, b, c, x1, x2, d);
+    int res = taskTwo(a, b, c, x1, x2);
     switch(res){
         case 0:
             cout << "Нет корней" << endl;
