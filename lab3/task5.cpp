@@ -11,8 +11,8 @@ int main(){
     if(readData(a, b, h, n)){    
         double x = a;
         while(x <= b){
-            cout << yFunc(x, n) << endl;
             cout << "x = " << x << endl;
+            cout << "y = " << yFunc(x, n) << endl;
             x+=h;
         }
         return 0;
@@ -30,7 +30,6 @@ bool readData(double& a, double& b, double& h, double& n){
         return false;
     }
 }
-
 
 double yFunc(double x, double n){
     double y;
