@@ -10,7 +10,7 @@ void minMax(int i)
         min = i;
     if(i > max)
         max = i;
-    cout << min<< endl << max << endl;
+    cout << "min = " << min << endl << "max = " << max << endl;
 }
 
 int main()
