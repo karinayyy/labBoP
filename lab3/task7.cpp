@@ -10,6 +10,5 @@ int main(){
     cout << threeArg(2, 4, 6) << endl;
     cout << threeArg(2, 4) << endl;
     cout << threeArg(2) << endl;
-
     return 0;
 }
