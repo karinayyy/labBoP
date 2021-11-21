@@ -32,7 +32,7 @@ int main(){
 
     cout << "IndexOfMin = " << indexOfMin << " min = " << arr[indexOfMin] << endl;
 
-    cout << "max + min = " << round((arr[indexOfMax] + arr[indexOfMin]) * 100)/100 << endl; //Округление до 2го знака   
+    cout << "max + min = " << arr[indexOfMax] + arr[indexOfMin]<< endl;
 
     return 0;
 }
