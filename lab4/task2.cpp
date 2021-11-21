@@ -23,15 +23,14 @@ int main(){
         {
             indexOfMax = i;
         }
-    }
-    cout << "IndexOfMax = " << indexOfMax << " num = " << arr[indexOfMax] << endl;
-    for(int i = 1; i < arrSize; i++){
         if (arr[i] < arr[indexOfMin])
         {
             indexOfMin = i;
         }
     }
-    cout << "IndexOfMax = " << indexOfMin << " num = " << arr[indexOfMin] << endl;
+    cout << "IndexOfMax = " << indexOfMax << " max = " << arr[indexOfMax] << endl;
+
+    cout << "IndexOfMin = " << indexOfMin << " min = " << arr[indexOfMin] << endl;
 
     cout << "max + min = " << round((arr[indexOfMax] + arr[indexOfMin]) * 100)/100 << endl; //Округление до 2го знака   
 
