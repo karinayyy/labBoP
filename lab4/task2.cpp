@@ -5,7 +5,7 @@ using namespace std;
 
 int main(){
     const int arrSize = 5;
-    double arr[arrSize]{};
+    double arr[arrSize];
     int indexOfMax = 0;
     int indexOfMin = 0;
     for(int i = 0; i < arrSize; i++){
