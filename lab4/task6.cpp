@@ -4,8 +4,7 @@
 using namespace std;
 void bin(int number)
 {
-    if(number)
-    {
+    if(number){
         cout << number % 2;
         bin(number / 2);
 
