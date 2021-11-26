@@ -3,12 +3,10 @@
 using namespace std;
 
 double sum(int n){
-    double y = 0;
-    for(int i = n; i >= 1; i--){
+    double y = 1;
+    for(int i =2 * n; i >= 1; i--){
         if(i % 2 == 0)
-            y += i;
-        else 
-            continue;
+            y *= i;
     }
     return y;
 }
