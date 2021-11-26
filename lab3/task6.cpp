@@ -2,22 +2,18 @@
 
 using namespace std;
 
-// double signum(int n){
-//     double y = 0;
-//     for (int i = 1; i <= n; i++){
-//         y+=i;
-//     }
-//     return y;
-// }
-
-double signum(int n){
-    return n <= 1 ? 1 : n + signum(n - 1);
+void signum(double x){
+    if(x < 0)
+        cout << "y = " << -1 << endl;
+    else if (x > 0)
+        cout << "y = " << 1 << endl;
+    else 
+        cout << "y = " << 0 << endl;
 }
 
 int main(){
-    cout << signum(5) << endl; //5+4+3+2+1=15
-    cout << signum(1) << endl;
-    cout << signum(10) << endl;
-    cout << signum(15) << endl;
+    signum(5) ; 
+    signum(0) ;
+    signum(-15);
     return 0;
 }
