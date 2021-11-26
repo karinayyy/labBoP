@@ -4,7 +4,7 @@ using namespace std;
 int main()
 {
     const int arrSize = 5;
-    int a[] = {21, 3, 12, 5, 4};
+    int a[] = {-21, 3, 12, 5, 4};
     bool repeat;
     do{
         repeat = false;
