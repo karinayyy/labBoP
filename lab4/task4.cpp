@@ -16,7 +16,7 @@ int main(){
             cin >> arr[i][j];
         }
     }
-    int rowSum[row]{};
+    int rowSum[row];
     for (int i = 0; i < row; i++){
         int oneRow = 0;
         for (int j = 0; j < col; j++){
