@@ -4,7 +4,7 @@ using namespace std;
 
 int main(){
     int size = 5;
-    int arr[size];
+    double arr[size];
     int sum = 0;
     cout << "Enter " << size << " el" << endl;
     for(int i = 0; i < size; i++){
