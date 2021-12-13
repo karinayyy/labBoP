@@ -11,9 +11,7 @@ int main(){
     cout << "Nums: ";
     while(fin >> num){
         cout<< num << " ";
-        if(num == 0)
-            continue;
-        else
+        if(num != 0)
             res*=num;
     }
     cout << endl;
