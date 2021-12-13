@@ -14,7 +14,9 @@ int main(){
         if(num != 0)
             res*=num;
     }
+    fin.close();
     cout << endl;
     cout << "Result = " << res << endl;
+
     return 0;
 }
