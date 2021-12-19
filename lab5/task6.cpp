@@ -12,7 +12,6 @@ int main(){
     while(true){
         cin >> mult.a;
         if(mult.a == 0){
-            mult.y--;
             break;
         }
         mult.y*=mult.a;
