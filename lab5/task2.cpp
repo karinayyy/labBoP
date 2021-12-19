@@ -4,7 +4,7 @@
 using namespace std;
 
 struct Point{
-    int x, y, z;
+    double x, y, z;
 };
 
 double sqr(double x){
@@ -16,12 +16,12 @@ double distance(Point p1, Point p2){
 }
 
 int main(){
-    int x1, y1, z1, x2, y2, z2;
+    double x1, y1, z1, x2, y2, z2;
 
     cout << "Enter p1" << endl;
-    scanf("%i %i %i", &x1, &y1, &z1);
+    scanf("%lf %lf %lf", &x1, &y1, &z1);
     cout << "Enter p2" << endl;
-    scanf("%i %i %i", &x2, &y2, &z2);
+    scanf("%lf %lf %lf", &x2, &y2, &z2);
 
     Point p1 = { x1,y1,z1 };
     Point p2 = { x2,y2,z2 };
