@@ -64,6 +64,7 @@ int main() {
                 arr[i][j] = pow(arr[i][j], 2);
             cout << arr[i][j] << ' ';
         }
+        cout << endl;
     }
     cout << endl << "2" << endl;
     const int SIZE = 4;
@@ -75,6 +76,14 @@ int main() {
     in.close();
 
     ofstream out("result.txt");
+    for(int i = 0; i < ROW; i++){
+        for(int j = 0; j < COL; j++){
+            if(arr[i][j] < 0)
+                arr[i][j] = pow(arr[i][j], 2);
+            out << arr[i][j] << ' ';
+        }
+        out << endl;
+    }
     for (int i = 0; i < ROW; i++){
         out << dArr[i];
         out << "\t";
