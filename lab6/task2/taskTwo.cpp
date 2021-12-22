@@ -73,8 +73,11 @@ double findMinSecondDerivative(double a, double b, double step, int n, theFunc f
     double dx = 0.0000001;
     for(double x = a; x <= b; x+= step){
         double y1 = (func(x + dx, n) - func(x, n)) / dx;
-        double y2 = (func(x + dx, n) - func(x, n)) / dx;
-        if(y2 < min) min = y2;
+        double y2 = (pow(dx, 2)*y1)/(pow(dx, 2));
+        if(y2 == 0){
+            if(y2 < min) min = x;
+        }
     }
-    return min;
+    cout << endl << "Min = " << min << endl;
+    return 0;
 }

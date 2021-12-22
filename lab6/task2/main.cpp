@@ -32,7 +32,6 @@ int main(){
             if(validDataY(a,b,step,n))
                 min = findMinSecondDerivative(a, b, step, n, yFunc, min);
         }
-        cout << endl << "Min = " << min << endl;
     }
     return 0;
 }
