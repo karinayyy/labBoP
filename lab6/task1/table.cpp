@@ -17,7 +17,7 @@ int validData(double& a, double& b, double& step){
     if (a <= b && step > 0)
         return 1;
     else{
-        cout << "Введите: (a <= b)&&(h > 0)&&(n > 1) " << endl;
+        cout << "Введите: (a <= b)&&(step > 0)" << endl;
         return 0;
     }
 }
@@ -26,7 +26,7 @@ int validData(double& a, double& b, double& step, int& n){
     if (a <= b && step > 0 && n > 1)
         return 1;
     else{
-        cout << "Введите: (a <= b)&&(h > 0)&&(n > 1) " << endl;
+        cout << "Введите: (a <= b)&&(step > 0)&&(n > 1) " << endl;
         return 0;
     }
 }
