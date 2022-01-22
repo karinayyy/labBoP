@@ -38,38 +38,22 @@ public:
 
     int getNumerator() { return m_numerator; }
     int getDenominator() { return m_denominator; }
-    double getValue() { return static_cast<double>(m_numerator) / m_denominator; }
-
+    
 
     friend Fraction operator+(const Fraction &drob1, const Fraction &drob2);
-    // friend Fraction operator-(const Fraction &drob1, const Fraction &drob2);?
-    // friend Fraction operator*(const Fraction &drob1, const Fraction &drob2);
-    // friend Fraction operator/(const Fraction &drob1, const Fraction &drob2);
     friend std::ostream& operator<<(std::ostream &out, const Fraction &finDrob);
     friend std::istream& operator>>(std::istream &in, Fraction &drob);
 
 };
 
-Fraction operator+(Fraction &drob1, Fraction &drob2){
+Fraction operator+(const Fraction &drob1, const Fraction &drob2){
     Fraction tmp(drob1.m_numerator*drob2.m_denominator
         +drob2.m_numerator*drob1.m_denominator,
         drob1.m_denominator*drob2.m_denominator);
     return tmp;
 }
-// Fraction operator-(Fraction &drob1, Fraction &drob2){
-//     Fraction tmp(drob1.m_numerator*drob2.m_denominator
-//         -drob2.m_numerator*drob1.m_denominator,
-//         drob1.m_denominator*drob2.m_denominator);
-//     return tmp;
-// }
-// Fraction operator*(Fraction &drob1, Fraction &drob2){
-//     Fraction tmp(drob1.m_numerator*drob2.m_numerator,
-//                 drob1.m_denominator*drob1.m_denominator);
-//     return tmp;
-// }
 
-
-std::ostream& operator<<(std::ostream &out, Fraction &finDrob){
+std::ostream& operator<<(std::ostream &out, const Fraction &finDrob){
     if(finDrob.m_denominator == 1){
         out << finDrob.m_numerator;
     }else{
