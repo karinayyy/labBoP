@@ -34,13 +34,12 @@ public:
             m_numerator = numerator/tmp*sign;
             m_denominator = denominator/tmp;
         }
-    }
-
-    int getNumerator() { return m_numerator; }
-    int getDenominator() { return m_denominator; }
-    
+    }   
 
     friend Fraction operator+(const Fraction &drob1, const Fraction &drob2);
+    friend Fraction operator-(const Fraction &drob1, const Fraction &drob2);
+    friend Fraction operator*(const Fraction &drob1, const Fraction &drob2);
+    friend Fraction operator/(const Fraction &drob1, const Fraction &drob2);
     friend std::ostream& operator<<(std::ostream &out, const Fraction &finDrob);
     friend std::istream& operator>>(std::istream &in, Fraction &drob);
 
@@ -52,7 +51,22 @@ Fraction operator+(const Fraction &drob1, const Fraction &drob2){
         drob1.m_denominator*drob2.m_denominator);
     return tmp;
 }
-
+Fraction operator-(const Fraction &drob1, const Fraction &drob2){
+    Fraction tmp(drob1.m_numerator*drob2.m_denominator
+        -drob2.m_numerator*drob1.m_denominator,
+        drob1.m_denominator*drob2.m_denominator);
+    return tmp;
+}
+Fraction operator*(const Fraction &drob1, const Fraction &drob2){
+    Fraction tmp(drob1.m_numerator*drob2.m_numerator,
+                drob1.m_denominator*drob2.m_denominator);;
+    return tmp;
+}
+Fraction operator/(const Fraction &drob1, const Fraction &drob2){
+    Fraction tmp(drob1.m_numerator*drob2.m_denominator,
+                drob1.m_denominator*drob2.m_numerator);
+    return tmp;
+}
 std::ostream& operator<<(std::ostream &out, const Fraction &finDrob){
     if(finDrob.m_denominator == 1){
         out << finDrob.m_numerator;
@@ -61,7 +75,6 @@ std::ostream& operator<<(std::ostream &out, const Fraction &finDrob){
     }
     return out;
 }
-
 std::istream& operator>>(std::istream &in, Fraction &drob){
     in >> drob.m_numerator;
     in >> drob.m_denominator;
@@ -71,10 +84,17 @@ std::istream& operator>>(std::istream &in, Fraction &drob){
 int main(){
     Fraction drob1;
     Fraction drob2;
+    Fraction finalres;
     std::cout<<"Enter first fraction "<<std::endl;
     std::cin>>drob1;
     std::cout<<"Enter second fraction "<<std::endl;
     std::cin>>drob2;
-    Fraction finalres = drob1+drob2;
+    finalres = drob1+drob2;
+    std::cout<<finalres<<std::endl;
+    finalres = drob1-drob2;
+    std::cout<<finalres<<std::endl;
+    finalres = drob1*drob2;
+    std::cout<<finalres<<std::endl;
+    finalres = drob1/drob2;
     std::cout<<finalres<<std::endl;
 }
