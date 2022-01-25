@@ -7,7 +7,7 @@ public:
     Sum(int value = 0){
         s_value += value;
     }
-    int getStaticValue(){return s_value;}
+    static int getStaticValue(){return s_value;}
 };
 
 int Sum::s_value = 0;
