@@ -8,6 +8,8 @@ public:
         m_real = real;
         m_imUnit = imUnit;
     }
+    double getReal(){return m_real;}
+    double getImUnit(){return m_imUnit;}
 
     friend ComplexNum operator+(const ComplexNum &num1, const ComplexNum &num2);
     friend ComplexNum operator-(const ComplexNum &num1, const ComplexNum &num2);
