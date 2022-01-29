@@ -30,9 +30,9 @@ public:
                 sign *= -1;
                 denominator *= -1;
             }
-            int tmp = gcd(numerator, denominator);
-            m_numerator = numerator/tmp*sign;
-            m_denominator = denominator/tmp;
+            int gcdInt = gcd(numerator, denominator);
+            m_numerator = numerator/gcdInt*sign;
+            m_denominator = denominator/gcdInt;
         }
     }   
 
@@ -46,26 +46,22 @@ public:
 };
 
 Fraction operator+(const Fraction &drob1, const Fraction &drob2){
-    Fraction tmp(drob1.m_numerator*drob2.m_denominator
+    return Fraction (drob1.m_numerator*drob2.m_denominator
         +drob2.m_numerator*drob1.m_denominator,
         drob1.m_denominator*drob2.m_denominator);
-    return tmp;
 }
 Fraction operator-(const Fraction &drob1, const Fraction &drob2){
-    Fraction tmp(drob1.m_numerator*drob2.m_denominator
+    return Fraction (drob1.m_numerator*drob2.m_denominator
         -drob2.m_numerator*drob1.m_denominator,
         drob1.m_denominator*drob2.m_denominator);
-    return tmp;
 }
 Fraction operator*(const Fraction &drob1, const Fraction &drob2){
-    Fraction tmp(drob1.m_numerator*drob2.m_numerator,
-                drob1.m_denominator*drob2.m_denominator);;
-    return tmp;
+    return Fraction (drob1.m_numerator*drob2.m_numerator,
+                drob1.m_denominator*drob2.m_denominator);
 }
 Fraction operator/(const Fraction &drob1, const Fraction &drob2){
-    Fraction tmp(drob1.m_numerator*drob2.m_denominator,
+    return Fraction (drob1.m_numerator*drob2.m_denominator,
                 drob1.m_denominator*drob2.m_numerator);
-    return tmp;
 }
 std::ostream& operator<<(std::ostream &out, const Fraction &finDrob){
     if(finDrob.m_denominator == 1){
@@ -76,9 +72,7 @@ std::ostream& operator<<(std::ostream &out, const Fraction &finDrob){
     return out;
 }
 std::istream& operator>>(std::istream &in, Fraction &drob){
-    in >> drob.m_numerator;
-    in >> drob.m_denominator;
-    return in;
+    return in >> drob.m_numerator >> drob.m_denominator;
 }
 
 int main(){
