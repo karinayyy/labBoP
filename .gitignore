@@ -1,1 +1,3 @@
 *.vscode/
+*.part2/lab4/build/
+*.part2/lab4/source.txt
