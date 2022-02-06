@@ -17,6 +17,9 @@ public class taskNineteen {
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
         scan.close();
-        System.out.println("Sum = " + sum(n));
+        if(n >= 0)
+            System.out.println("Sum = " + sum(n));
+        else
+            System.out.println("err n < 0");
     }
 }
