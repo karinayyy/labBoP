@@ -9,7 +9,10 @@ public class taskNineteen {
             return 0;
         else if(n == 1)
             return 1;
-        res += Math.pow(n,2)*sum(n - 1);
+        if(n > 0)
+            res += Math.pow(n,2)*sum(n - 1);
+        else if (n < 0)
+            res += 1 / Math.pow(n, 2) * sum(-n);
         return res;
     }
     public static void main(String[] args){
@@ -17,9 +20,6 @@ public class taskNineteen {
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt();
         scan.close();
-        if(n >= 0)
-            System.out.println("Sum = " + sum(n));
-        else
-            System.out.println("err n < 0");
+        System.out.println("Sum = " + sum(n));
     }
 }
