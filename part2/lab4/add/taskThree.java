@@ -4,19 +4,15 @@ import java.util.Scanner;
 
 public class taskThree {
     public static void main(String[] args){
-        int[] arr;
-        int size, res = 1;
-        System.out.println("Enter quant of num");
-        Scanner scan = new Scanner(System.in);
-        size = scan.nextInt();
-        arr = new int[size];
+
         System.out.println("Enter number");
-        for(int i = 0; i < size; i++){
-            arr[i] = scan.nextInt();
-            if(arr[i] != 0)
-                res*=arr[i];
+        Scanner scan = new Scanner(System.in);
+        int n = scan.nextInt(), mult = 1;
+        for(int i = n; i != 0; i /= 10){ 
+            if(i % 10 != 0)
+                mult *= (i % 10); 
         }
         scan.close();
-        System.out.println("Mult = " + res);
+        System.out.println("Mult = " + mult);
     }
 }
