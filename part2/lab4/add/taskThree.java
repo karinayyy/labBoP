@@ -4,15 +4,17 @@ import java.util.Scanner;
 
 public class taskThree {
     public static void main(String[] args){
-
         System.out.println("Enter number");
         Scanner scan = new Scanner(System.in);
         int n = scan.nextInt(), mult = 1;
-        for(int i = n; i != 0; i /= 10){ 
-            if(i % 10 != 0)
-                mult *= (i % 10); 
-        }
         scan.close();
+        if(n > 0){
+            for(int i = n; i != 0; i /= 10){ 
+                if(i % 10 != 0)
+                    mult *= (i % 10); 
+            }
         System.out.println("Mult = " + mult);
+        }else
+            System.out.println("err n <= 0");
     }
 }
