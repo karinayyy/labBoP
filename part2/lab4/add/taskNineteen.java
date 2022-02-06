@@ -5,8 +5,10 @@ import java.util.Scanner;
 public class taskNineteen {
     public static int sum(int n){
         int res = 1;
-        if(n == 1 || n == 0)
-            return res;
+        if(n == 0)
+            return 0;
+        else if(n == 1)
+            return 1;
         res += Math.pow(n,2)*sum(n - 1);
         return res;
     }
