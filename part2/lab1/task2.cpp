@@ -24,6 +24,21 @@ public:
     friend Matrix operator*(const Matrix &a, const Matrix &b);
     friend std::istream& operator>>(std::istream &in, Matrix &a);
     friend std::ostream& operator<<(std::ostream &out, const Matrix &a);
+    class ErrNum{
+    private:
+        int err;
+    public:
+        ErrNum(int errNum) : err(errNum) { }
+        int getErr(){ return err; }
+    };
+    class OutOfBounds{
+    private:
+        double row, col;
+    public:
+        OutOfBounds(double r, double c) : row(r), col(c) { }
+        double getRow() { return row; }
+        double getCol() { return col; } 
+    };
 };
 
 Matrix::Matrix(int row, int col) : m_row(row), m_col(col){
@@ -66,6 +81,8 @@ std::ostream& operator<<(std::ostream &out, const Matrix &a){
 }
 
 Matrix operator+(const Matrix &a, const Matrix &b){
+    if(a.m_row != b.m_row && a.m_col != b.m_col)
+        throw Matrix::ErrNum(123);
     Matrix res(a.m_row, a.m_col);
     for(int i = 0; i < a.m_row; i++){
         for(int j = 0; j < a.m_col; j++)
@@ -75,6 +92,8 @@ Matrix operator+(const Matrix &a, const Matrix &b){
 }
 
 Matrix operator-(const Matrix &a, const Matrix &b){
+    if(a.m_row != b.m_row && a.m_col != b.m_col)
+        throw Matrix::ErrNum(234);
     Matrix res(a.m_row, a.m_col);
     for(int i = 0; i < a.m_row; i++){
         for(int j = 0; j < a.m_col; j++)
@@ -84,6 +103,8 @@ Matrix operator-(const Matrix &a, const Matrix &b){
 }
 
 Matrix operator*(const Matrix &a, const Matrix &b){
+    if(a.m_col != b.m_row)
+        throw Matrix::ErrNum(345);
     Matrix res(b.m_row, b.m_col);
     for(int i = 0; i < a.m_row; i++){
         for(int j = 0; j < b.m_col; j++)
@@ -95,9 +116,8 @@ Matrix operator*(const Matrix &a, const Matrix &b){
 }
 
 int& Matrix::operator()(int row, int col){
-    assert(row >= 0 && row < m_row);
-    assert(col >= 0 && col < m_col);
-
+    if((row < 0 || row >= m_row) || (col < 0 || col >= m_col)) 
+        throw Matrix::OutOfBounds(row, col);
     return pa[row][col];
 
 }
@@ -135,38 +155,64 @@ int main(){
 
     switch (operatorChoose){
     case 1:
-        if(a.getRow() == b.getRow() && a.getCol() == b.getCol())
+        try{
             std::cout << a + b << std::endl;
-        else    
-            std::cout << "Matrix a rows and cols must be equel to Matrix b rows and cols" << std::endl;
+        }catch(Matrix::ErrNum& e){
+            std::cout << "Matrix a rows and cols must be equel to Matrix b rows and cols. Err #" << e.getErr() << std::endl;
+        }
         break;
     case 2:
-        if(a.getRow() == b.getRow() && a.getCol() == b.getCol())
+        try{
             std::cout << a - b << std::endl;
-        else    
-            std::cout << "Matrix a rows and cols must be equel to Matrix b rows and cols" << std::endl;
+        }catch(Matrix::ErrNum& e){
+            std::cout << "Matrix a rows and cols must be equel to Matrix b rows and cols. Err #" << e.getErr() << std::endl;
+        }
         break;
     case 3:
-        if(a.getCol() == b.getRow())
+        try{
             std::cout << a * b << std::endl;
-        else
-            std::cout << "Matrix a cols must be equel to matrix b rows" << std::endl;
+        }catch(Matrix::ErrNum& e){
+            std::cout << "Matrix a cols must be equel to matrix b rows. Err #" << e.getErr() << std::endl;
+        }
         break;
     default:
         std::cout << "Something went wrong..." << std::endl;
         break;
     }
+    
+    int indTask;
 
-    Matrix c(2, 3);
-    c(0, 0) = -2;
-    c(0, 1) = 1;
-    c(0, 2) = -3;
-    c(1, 0) = -4;
-    c(1, 1) = 2;
-    std::cout << c << std::endl;
-
-    NegativeToSquare(c);
-    std::cout << c << std::endl;
+    std::cout << "Do you want to run individual task?"
+              << "\n 1 - yes"
+              << "\n 0 - no" << std::endl;
+    std::cin >> indTask;
+    
+    switch(indTask){
+    case 0:
+        std::cout << "Bye" << std::endl;
+        break;
+    case 1:
+        {
+            Matrix c(2, 3);
+            try{
+                c(0, 0 ) = -2;
+                c(0, 1) = 1;
+                c(0, 2) = -3;
+                c(1, 0) = -4;
+                c(1, 1) = 2;
+                // c(3, 5) = 5;
+                std::cout << c << std::endl;
+                NegativeToSquare(c);
+                std::cout << c << std::endl;
+            }catch(Matrix::OutOfBounds& e){
+                std::cout << "(" << e.getRow() << "x" << e.getCol() << ")" << " -- wrong data" << std::endl;
+            }
+        }
+        break;
+    default:
+        std::cout << "Something went wrong..." << std::endl;
+        break;
+    }
 
     return 0;
 }
