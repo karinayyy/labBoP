@@ -4,7 +4,7 @@
 #include "validData.h"
 
 class indFunc : public YClass {
-    virtual double indFunction(double x, double n) {
+    virtual double indFunction(double x, double n) override {
         double y;
         if (x < 0) {
             y = 1;
@@ -26,27 +26,10 @@ class indFunc : public YClass {
     }
 };
 
-class expFunc : public YClass {
-    virtual double expFunction(double x, int power) {
-        double result = 1;
-        if(x == 0) return 0;
-        if(power == 0) return result;
-        if(power > 0){
-            for(int i = 0; i < power; i++)
-                result *= x;
-            return result;
-        }else{
-            for(int i = 0; i > power; i--)
-                result/=x;
-            return result;
-        }
-    }
-};
-
 int main(){
-    YClass y;
+    indFunc y;
     while(true){
-        std::cout << "Do you want to continue? Enter 0 if no, 1 exp, 2 to start individuel func " << std::endl;
+        std::cout << "Do you want to continue? Enter 0 if no, 1 if yes" << std::endl;
         int chosen = validChosen(chosen);
         if(chosen == 0){
             std::cout << "Bye" << std::endl;
@@ -62,19 +45,11 @@ int main(){
         double min;
         if(chosen == 1){
             int n;
-            std::cout << std::endl << "Enter n (power) "; 
-            std::cin >> n;
-            if(validDataExp(a,b,step)){
-                min = y.findMinSecondDerivative(a, b, step, n, min);
-                std::cout << std::endl << "Min = " << min << std::endl;
-            }
-        }else{
-            int n;
             std::cout << std::endl << "Enter n (num of iterations)";
             std::cin >> n;
             if(validDataY(a,b,step,n)){
-                min = y.findMinSecondDerivative(a, b, step, n, min);
-                std::cout << std::endl << "Min = " << min << std::endl;
+                // min = y.findMinSecondDerivative(a, b, step, n, min);
+                std::cout << std::endl << "Min = " << y.findMinSecondDerivative(a, b, step, n, min) << std::endl;
             }
         }
     }

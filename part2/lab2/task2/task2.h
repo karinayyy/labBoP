@@ -2,13 +2,9 @@
 #define YClass_h
 
 class YClass{
-private:
-    double a, b, step;
-    int n;
-public: 
-    typedef double (*theFunc)(double, int);
-    theFunc func;
+public:
     double findMinSecondDerivative(double a, double b, double step, int n, double& min);   
+    virtual double indFunction(double x, double n) = 0;
 };
 
 
