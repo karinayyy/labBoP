@@ -1,5 +1,7 @@
 *.vscode/
 *.out
 *.class
+*.o
+
 part2/lab4/build/
 part2/lab4/source.txt
