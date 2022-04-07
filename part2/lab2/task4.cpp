@@ -16,7 +16,7 @@ private:
     std::string m_university;
 public:
     Campus(std::string adress = "", std::string university = "")
-        : m_university(university) {}
+        : Building(adress), m_university(university) {}
     void show() override{
         Building::show();
         std::cout << "University: " << m_university << std::endl;
